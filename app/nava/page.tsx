@@ -48,7 +48,7 @@ export default function Page() {
   useEffect(() => {
     const fetchUser = async (tk: string) => {
       try {
-        const res = await fetch('http://localhost:8000/auth/me', {
+        const res = await fetch('https://nava-ai-backend.onrender.com/auth/me', {
           headers: { Authorization: `Bearer ${tk}` },
         });
         const data = await res.json();
@@ -68,7 +68,7 @@ export default function Page() {
     setLoading(true);
     try {
       const res = await axios.post(
-        'http://localhost:8000/openrouter',
+        'https://nava-ai-backend.onrender.com/openrouter',
         { messages: updated },
         { headers: { Authorization: `Bearer ${token}` } }
       );
